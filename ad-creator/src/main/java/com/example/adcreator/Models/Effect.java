@@ -12,4 +12,14 @@ public class Effect {
 
     @Column(name = "EFFECT_NAME")
     private String name;
+
+    public Effect(){}
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

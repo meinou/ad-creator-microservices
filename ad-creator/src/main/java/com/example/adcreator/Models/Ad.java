@@ -1,6 +1,7 @@
 package com.example.adcreator.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -9,6 +10,10 @@ public class Ad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JoinTable
+    @OneToMany
+    private List<Effect> effects;
 
     @Column(name="TEXT")
     private String text;
@@ -47,5 +52,13 @@ public class Ad {
 
     public void setUrlToClick(String urlToClick) {
         this.urlToClick = urlToClick;
+    }
+
+    public List<Effect> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(List<Effect> effects) {
+        this.effects = effects;
     }
 }

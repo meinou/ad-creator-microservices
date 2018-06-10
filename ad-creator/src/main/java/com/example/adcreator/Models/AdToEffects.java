@@ -3,7 +3,7 @@ package com.example.adcreator.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "EFFECTS")
+@Table(name = "AD_EFFECTS")
 public class AdToEffects {
 
     @Id
@@ -16,4 +16,23 @@ public class AdToEffects {
     @Column(name = "EFFECT_ID")
     private Long effectId;
 
+    public AdToEffects(){}
+
+    @ManyToMany
+    @JoinColumn(name = "ID")
+    public Long getAdId() {
+        return adId;
+    }
+
+    @ManyToMany
+    @JoinColumn(name = "ID")
+    public Long getEffectId() {
+        return effectId;
+    }
 }
+
+
+
+
+
+
