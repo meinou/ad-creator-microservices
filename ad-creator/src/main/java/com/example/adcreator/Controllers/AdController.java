@@ -13,7 +13,7 @@ import  org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "https://project-3-anna.s3-website-us-east-1.amazonaws.com")
+@CrossOrigin(origins = "http://project-3-anna.s3-website-us-east-1.amazonaws.com")
 @RestController
 public class AdController {
 

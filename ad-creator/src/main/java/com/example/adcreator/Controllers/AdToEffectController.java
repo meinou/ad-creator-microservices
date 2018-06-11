@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://project-3-anna.s3-website-us-east-1.amazonaws.com")
 @RestController
 public class AdToEffectController {
     @Autowired
