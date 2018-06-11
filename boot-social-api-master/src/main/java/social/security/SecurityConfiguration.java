@@ -19,8 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/session").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/tickets").permitAll()
-                .antMatchers("/api/**").authenticated()
+                .antMatchers("/requests").authenticated()
                 .and()
                 .headers().frameOptions().disable() // for h2
                 .and()
@@ -29,5 +28,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .and().csrf().disable();
+
     }
 }

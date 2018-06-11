@@ -1,18 +1,18 @@
 
 CREATE TABLE AD (
-    ID serial,
-    TEXT varchar(255),
-    URL_CLICK varchar(255) NOT NULL,
+    AID serial,
+    cta varchar(255),
+    Image_Url varchar(1024) NOT NULL,
+    Click_Url varchar(1024) NOT NULL,
     USER_ID bigint
 );
 
 CREATE TABLE EFFECT (
-    ID serial,
-    EFFECT_NAME varchar(100) NOT NULL
+    EID serial,
+    Name varchar(100) NOT NULL
 );
 
 CREATE TABLE AD_EFFECTS (
-    ID serial,
-    AD_ID bigint NOT NULL,
-    EFFECT_ID bigint NOT NULL
+    AD_AID bigint NOT NULL,
+    EFFECTS_EID bigint NOT NULL
 );

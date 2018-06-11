@@ -1,57 +1,68 @@
 package com.example.adcreator.Models;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 
-
+@Data
+@AllArgsConstructor
+@Getter @Setter
 @Entity
-@Table(name = "ADS")
+@Table(name = "ad")
 public class Ad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long aid;
 
     @JoinTable
     @OneToMany
     private List<Effect> effects;
 
-    @Column(name="TEXT")
-    private String text;
+    private String cta;
 
-    @Column(name = "URL_CLICK")
-    private String urlToClick;
+    private String imageUrl;
 
-    @Column(name = "USER_ID")
+    private String clickUrl;
+
     private Long userId;
 
     public Ad(){}
 
-    public Long getId() {
-        return id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getUrlToClick() {
-        return urlToClick;
+    public Long getAid() {
+        return aid;
     }
 
     public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUrlToClick(String urlToClick) {
-        this.urlToClick = urlToClick;
+    public String getClickUrl() {
+        return clickUrl;
+    }
+
+    public void setClickUrl(String clickUrl) {
+        this.clickUrl = clickUrl;
+    }
+
+    public String getCta() {
+        return cta;
+    }
+
+    public void setCta(String cta) {
+        this.cta = cta;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public List<Effect> getEffects() {
@@ -62,3 +73,4 @@ public class Ad {
         this.effects = effects;
     }
 }
+

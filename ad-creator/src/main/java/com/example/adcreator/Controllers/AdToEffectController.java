@@ -1,7 +1,6 @@
 package com.example.adcreator.Controllers;
 
 import com.example.adcreator.Models.Ad;
-import com.example.adcreator.Models.AdToEffects;
 import com.example.adcreator.Repositories.AdRepository;
 import com.example.adcreator.Repositories.AdToEffectsRepository;
 import com.example.adcreator.Repositories.EffectRepository;
@@ -28,7 +27,7 @@ public class AdToEffectController {
     EffectRepository effectRepository;
 
     @RequestMapping("/adsToEffects")
-    public Iterable<AdToEffects> getAllAds() {
+    public Iterable<Ad> getAllAds() {
         return adToEffectsRepository.findAll();
     }
 }
