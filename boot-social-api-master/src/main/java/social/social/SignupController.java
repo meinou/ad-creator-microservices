@@ -22,6 +22,11 @@ public class SignupController {
         signInUtils = new ProviderSignInUtils(connectionFactoryLocator, connectionRepository);
     }
 
+    @RequestMapping("/")
+    public String home() {
+        return "some twitters";
+    }
+
     @RequestMapping(value = "/signup")
     public String signup(WebRequest request) {
         log.debug("deb--", request);
