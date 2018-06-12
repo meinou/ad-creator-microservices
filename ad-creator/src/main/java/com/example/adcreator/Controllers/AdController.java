@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 import  org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 //@CrossOrigin(origins = "http://project-3-anna.s3-website-us-east-1.amazonaws.com")
 @RestController
 public class AdController {
@@ -48,6 +48,11 @@ public class AdController {
         return ad;
     }
 
+    @GetMapping("/ads/users/{userId}")
+    public Iterable<Ad> getAllByUserId(@PathVariable Long userId) {
+        return adRepository.findAllByUserId(userId);
+    }
+
 
     @PutMapping("/ads/{aid}")
     public Ad updateAd (@PathVariable Long aid, @RequestBody Ad adRequest) {
@@ -59,6 +64,7 @@ public class AdController {
         adFromDb.setEffects(adRequest.getEffects());
         return adRepository.save(adFromDb);
     }
+
 
     @GetMapping("/ads/{aid}")
     public Ad getAd (@PathVariable Long aid) {
